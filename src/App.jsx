@@ -36,7 +36,6 @@ function App() {
 
   const deleteQuantity = (index) => {
     const newItemquantity = [...itemquantity];
-    console.log(index);
     if (newItemquantity[index] > 1) {
       newItemquantity[index] -= 1;
       setItemQuantity(newItemquantity);
@@ -44,6 +43,12 @@ function App() {
       deleteCart(index);
     }
   };
+
+  const totalPrice = cart.reduce((acc, curr) => {
+    acc += curr.price * itemquantity[cart.indexOf(curr)];
+    return acc;
+    console.log(acc);
+  }, 0);
 
   return (
     <div className="App">
@@ -66,7 +71,7 @@ function App() {
       </section>
       <hr />
       <section className="cart">
-        <h1 className="cart-heading">Cart (Total Price is x Baht)</h1>
+        <h1 className="cart-heading">Cart (Total Price is {totalPrice.toLocaleString()} Baht)</h1>
         <div className="cart-item-list">
           {cart.map((item, index) => {
             return (
