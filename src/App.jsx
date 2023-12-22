@@ -77,7 +77,7 @@ function App() {
             return (
               <div className="cart-item" key={index}>
                 <h1>Item name: {item.name}</h1>
-                <h2>Price: {(item.price * itemquantity[index]).toLocaleString()} Baht</h2>
+                <h2>Price: {item.price.toLocaleString()} Baht</h2>
                 <h2>Quantity: {itemquantity[index]}</h2>
                 <button className="delete-button" onClick={() => deleteCart(index)}>
                   x
