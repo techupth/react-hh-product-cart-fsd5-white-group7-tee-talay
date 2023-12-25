@@ -70,6 +70,10 @@ button {
 }
 
 /* Product List Styles */
+.product-list-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .product-heading {
   color: var(--primary-color);
